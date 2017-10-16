@@ -1,9 +1,9 @@
 <template>
   <div>
     <transition-group name="fade">
-      <podcast :key="1" v-for="podcast in podcasts"></podcast>
+      <podcast :key="1"></podcast>
     </transition-group>
-    <a href="#" class="load-more" @click.prevent="loadmore">Load older podcasts</a>
+    <a href="#" class="load-more">Load older podcasts</a>
   </div>
 </template>
 
@@ -12,18 +12,8 @@
 
   export default {
     name: 'home',
-    data () {
-      return {
-        podcasts: []
-      }
-    },
     components: {
       Podcast
-    },
-    methods: {
-      loadmore () {
-        this.podcasts.push(1)
-      }
     }
   }
 </script>

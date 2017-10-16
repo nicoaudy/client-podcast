@@ -12,6 +12,7 @@ export const getPodcasts = ({ commit }, page = 1) => {
 
 export const getMorePodcasts = ({ commit, state }, page = 1) => {
   api.getPodcasts(state.page.current + 1).then((response) => {
+    commit('appendToPodcasts', response.data.data)
     commit('setPage', {
       current: state.page.current + 1,
       max: response.data.meta.pagination.total_pages

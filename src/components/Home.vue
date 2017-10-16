@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ page }}
     <transition-group name="fade">
       <podcast :key="podcast.id" v-for="podcast in podcasts" :podcast="podcast"></podcast>
     </transition-group>
@@ -18,7 +19,8 @@
     },
     computed: {
       ...mapGetters({
-        podcasts: 'podcasts/getPodcasts'
+        podcasts: 'podcasts/getPodcasts',
+        page: 'podcasts/getPage'
       })
     },
     methods: {

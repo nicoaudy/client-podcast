@@ -19,3 +19,9 @@ export const getMorePodcasts = ({ commit, state }, page = 1) => {
     })
   })
 }
+
+export const getPodcast = ({ commit }, id) => {
+  return api.getPodcast(id).then((response) => {
+    return response.data.data
+  })
+}

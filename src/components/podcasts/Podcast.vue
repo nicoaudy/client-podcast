@@ -1,12 +1,12 @@
 <template>
     <div class="podcast">
-        <a href="#" class="podcast__play">
+        <a href="#" class="podcast__play" @click.prevent="switchPodcast(podcast.id)">
             <img src="../../assets/img/play.svg" alt="Play" class="podcast__playbutton">
         </a>
         <div class="podcast__details">
             <div class="podcast__sub">{{ podcast.created_at_human }}</div>
             <h1 class="podcast__header">
-                <a href="#">{{ podcast.title }}</a>
+                <a href="#" @click.prevent="switchPodcast(podcast.id)">{{ podcast.title }}</a>
             </h1>
             <p>{{ podcast.description }}</p>
         </div>
@@ -14,11 +14,22 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex'
     export default {
       name: 'podcast',
       props: [
         'podcast'
-      ]
+      ],
+      methods: {
+        ...mapActions({
+          getPodcast: 'podcasts/getPodcast'
+        }),
+        switchPodcast (id) {
+          this.getPodcast(id).then((podcast) => {
+            console.log(podcast)
+          })
+        }
+      }
     }
 </script>
 

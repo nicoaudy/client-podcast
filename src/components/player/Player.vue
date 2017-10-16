@@ -14,7 +14,12 @@
       name: 'player',
       props: [
         'podcast'
-      ]
+      ],
+      watch: {
+        podcast () {
+          this.$refs.player.load()
+        }
+      }
     }
 </script>
 

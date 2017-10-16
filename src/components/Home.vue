@@ -1,6 +1,9 @@
 <template>
   <div>
-    <podcast></podcast>
+    <transition-group name="fade">
+      <podcast :key="1" v-for="podcast in podcasts"></podcast>
+    </transition-group>
+    <a href="#" class="load-more" @click.prevent="loadmore">Load older podcasts</a>
   </div>
 </template>
 
@@ -9,8 +12,32 @@
 
   export default {
     name: 'home',
+    data () {
+      return {
+        podcasts: []
+      }
+    },
     components: {
       Podcast
+    },
+    methods: {
+      loadmore () {
+        this.podcasts.push(1)
+      }
     }
   }
 </script>
+
+<style lang="scss">
+  .load-more {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+  }
+</style>

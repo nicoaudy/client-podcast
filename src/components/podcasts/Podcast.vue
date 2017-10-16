@@ -6,7 +6,7 @@
         <div class="podcast__details">
             <div class="podcast__sub">2 days ago</div>
             <h1 class="podcast__header">
-                Lorem Ipsum Title
+                <a href="#">Lorem Ipsum Title</a>
             </h1>
             <p>Lorem ipsum description</p>
         </div>
@@ -33,6 +33,14 @@
 
         &__sub {
             font-weight: 500;
+        }
+
+        &__header {
+            font-size: 1.6em;
+
+            a {
+                text-decoration: none;
+            }
         }
 
         &__details {

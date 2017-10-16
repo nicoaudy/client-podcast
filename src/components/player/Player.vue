@@ -10,6 +10,8 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex'
+
     export default {
       name: 'player',
       props: [
@@ -19,6 +21,16 @@
         podcast () {
           this.$refs.player.load()
         }
+      },
+      methods: {
+        ...mapActions({
+          setPlaying: 'player/setPlaying'
+        })
+      },
+      mounted () {
+        this.$refs.player.addEventListener('ended', () => {
+          this.setPlaying(null)
+        })
       }
     }
 </script>

@@ -45,7 +45,7 @@
     .podcast {
         background-color: #fff;
         display: flex;
-        min-height: 240px;
+        min-height: 280px;
         border-radius: $global-radius;
         box-shadow: 0 5px 10px rgba(#000000, 0.5);
         margin-bottom: 40px;

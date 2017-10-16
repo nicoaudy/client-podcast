@@ -1,19 +1,33 @@
 <template>
   <div>
     <transition-group name="fade">
-      <podcast :key="1"></podcast>
+      <podcast :key="podcast.id" v-for="podcast in podcasts" :podcast="podcast"></podcast>
     </transition-group>
     <a href="#" class="load-more">Load older podcasts</a>
   </div>
 </template>
 
 <script>
+  import { mapActions, mapGetters } from 'vuex'
   import Podcast from './podcasts/Podcast'
 
   export default {
     name: 'home',
     components: {
       Podcast
+    },
+    computed: {
+      ...mapGetters({
+        podcasts: 'podcasts/getPodcasts'
+      })
+    },
+    methods: {
+      ...mapActions({
+        getPodcasts: 'podcasts/getPodcasts'
+      })
+    },
+    mounted () {
+      this.getPodcasts()
     }
   }
 </script>

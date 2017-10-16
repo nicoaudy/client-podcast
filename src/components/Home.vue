@@ -1,8 +1,6 @@
 <template>
   <div>
     <podcast></podcast>
-    <podcast></podcast>
-    <podcast></podcast>
   </div>
 </template>
 

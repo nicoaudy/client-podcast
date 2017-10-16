@@ -22,11 +22,12 @@
       ],
       methods: {
         ...mapActions({
-          getPodcast: 'podcasts/getPodcast'
+          getPodcast: 'podcasts/getPodcast',
+          setPlaying: 'player/setPlaying'
         }),
         switchPodcast (id) {
           this.getPodcast(id).then((podcast) => {
-            console.log(podcast)
+            this.setPlaying(podcast)
           })
         }
       }

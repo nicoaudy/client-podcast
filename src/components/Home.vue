@@ -1,10 +1,9 @@
 <template>
   <div>
-    {{ page }}
     <transition-group name="fade">
       <podcast :key="podcast.id" v-for="podcast in podcasts" :podcast="podcast"></podcast>
     </transition-group>
-    <a href="#" class="load-more">Load older podcasts</a>
+    <a href="#" class="load-more" v-if="page.hasMore()">Load older podcasts</a>
   </div>
 </template>
 

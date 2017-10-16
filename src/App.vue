@@ -34,7 +34,7 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     background-color: #edeff0;
-    margin-top: calc(#{$header-height} + 40px);
+    margin-top: calc(#{$header-height} + (#{$header-padding} * 2));
   }
 
   p {

@@ -34,7 +34,7 @@
     background-color: #fff;
     position: fixed;
     top: 0; left: 0;
-    padding: 20px;
+    padding: $header-padding;
     z-index: 2;
 
   }

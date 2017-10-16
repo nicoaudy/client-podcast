@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style lang="scss">
+  @import '~styles/variables';
+
   * {
     box-sizing: border-box;
   }
@@ -32,7 +34,7 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
     background-color: #edeff0;
-    /*margin-top*/
+    margin-top: calc(#{$header-height} + 40px);
   }
 
   p {

@@ -1,15 +1,20 @@
 <template>
     <div class="player">
         <div class="player__header">
-            <span>Now playing</span> : Podcast title
+            <span>Now playing</span> : {{ podcast.title }}
         </div>
-        <audio controls autoplay ref="player" class="player__audio"></audio>
+        <audio controls autoplay ref="player" class="player__audio">
+            <source type="audio/mp3" :src="podcast.files.mp3"></source>
+        </audio>
     </div>
 </template>
 
 <script>
     export default {
-      name: 'player'
+      name: 'player',
+      props: [
+        'podcast'
+      ]
     }
 </script>
 

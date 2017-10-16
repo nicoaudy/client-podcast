@@ -1,7 +1,7 @@
 <template>
   <header class="topheader">
     <div class="container">
-      <player v-if="playing"></player>
+      <player v-if="playing" :podcast="playing"></player>
       <p v-else class="welcome">Oh hi. <strong>Please choose something to play.</strong></p>
     </div>
   </header>
